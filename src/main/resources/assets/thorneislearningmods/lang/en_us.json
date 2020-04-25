@@ -1,0 +1,14 @@
+{
+    "item.thorneislearningmods.mod_gem": "Mod Gem",
+    "block.thorneislearningmods.mod_gem_block": "Mod Gem Block",
+    "item.thorneislearningmods.mod_gem_sword": "Mod Gem Sword",
+    "item.thorneislearningmods.mod_gem_axe": "Mod Gem Axe",
+    "item.thorneislearningmods.mod_gem_pickaxe": "Mod Gem Pickaxe",
+    "item.thorneislearningmods.mod_gem_shovel": "Mod Gem Shovel",
+    "item.thorneislearningmods.mod_gem_hoe": "Mod Gem Hoe",
+    
+    "itemGroup.thornecraft_group": "ThorneCraft",
+    
+    "block.thorneislearningmods.sap": "Sap",
+    "item.thorneislearningmods.sap_bucket": "Bucket of Sap"
+}
