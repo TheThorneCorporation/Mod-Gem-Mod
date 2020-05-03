@@ -1,11 +1,17 @@
 {
     "item.thorneislearningmods.mod_gem": "Mod Gem",
     "block.thorneislearningmods.mod_gem_block": "Mod Gem Block",
+    "block.thorneislearningmods.mod_gem_ore": "Mod Gem Ore",
     "item.thorneislearningmods.mod_gem_sword": "Mod Gem Sword",
     "item.thorneislearningmods.mod_gem_axe": "Mod Gem Axe",
     "item.thorneislearningmods.mod_gem_pickaxe": "Mod Gem Pickaxe",
     "item.thorneislearningmods.mod_gem_shovel": "Mod Gem Shovel",
     "item.thorneislearningmods.mod_gem_hoe": "Mod Gem Hoe",
+    
+    "item.thorneislearningmods.mod_gem_helmet": "Mod Gem Helmet",
+    "item.thorneislearningmods.mod_gem_chestplate": "Mod Gem Chestplate",
+    "item.thorneislearningmods.mod_gem_leggings": "Mod Gem Leggings",
+    "item.thorneislearningmods.mod_gem_boots": "Mod Gem Boots",
     
     "itemGroup.thornecraft_group": "ThorneCraft",
     

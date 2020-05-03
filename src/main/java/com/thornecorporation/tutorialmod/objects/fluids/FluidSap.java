@@ -74,7 +74,7 @@ public abstract class FluidSap extends FlowingFluid{
 	@Override
 	public int getTickRate(IWorldReader p_205569_1_) {
 		// TODO Auto-generated method stub
-		return 60;
+		return 20;
 	}
 
 	@Override

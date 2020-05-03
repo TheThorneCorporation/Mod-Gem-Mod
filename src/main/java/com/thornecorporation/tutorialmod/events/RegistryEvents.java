@@ -7,6 +7,7 @@ import com.thornecorporation.tutorialmod.Main;
 import com.thornecorporation.tutorialmod.lists.BlockList;
 import com.thornecorporation.tutorialmod.lists.FluidList;
 import com.thornecorporation.tutorialmod.lists.ItemList;
+import com.thornecorporation.tutorialmod.lists.ItemList.ThorneCraftArmorMaterial;
 import com.thornecorporation.tutorialmod.objects.fluids.FluidSap;
 import com.thornecorporation.tutorialmod.objects.fluids.FluidSap.Source;
 import com.thornecorporation.tutorialmod.objects.fluids.FluidSap.Flowing;
@@ -16,6 +17,8 @@ import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.BucketItem;
@@ -46,14 +49,20 @@ public class RegistryEvents
 		(
 			ItemList.mod_gem = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(location("mod_gem")),
 			ItemList.mod_gem_block = new BlockItem(BlockList.mod_gem_block, new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(BlockList.mod_gem_block.getRegistryName()),
+			ItemList.mod_gem_ore = new BlockItem(BlockList.mod_gem_ore, new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(BlockList.mod_gem_ore.getRegistryName()),
 			ItemList.sap_bucket = new BucketItem(() ->  FluidList.sap, new Item.Properties().group(ItemGroup.MISC).maxStackSize(1)).setRegistryName(location("sap_bucket")),
 			
 			//mod gem tools
-			ItemList.mod_gem_sword = new SwordItem(ItemList.ModGemItemTier.MOD_GEM, 3, 1.8f, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(location("mod_gem_sword")),
-			ItemList.mod_gem_pickaxe = new PickaxeItem(ItemList.ModGemItemTier.MOD_GEM, 1, -2.8f, new Item.Properties().group(ItemGroup.TOOLS).addToolType(ToolType.PICKAXE, 4)).setRegistryName(location("mod_gem_pickaxe")),
-			ItemList.mod_gem_axe = new AxeItem(ItemList.ModGemItemTier.MOD_GEM, 2, 1.2f, new Item.Properties().group(ItemGroup.TOOLS).addToolType(ToolType.AXE, 4)).setRegistryName(location("mod_gem_axe")),
-			ItemList.mod_gem_shovel = new ShovelItem(ItemList.ModGemItemTier.MOD_GEM, 0, 1.0f, new Item.Properties().group(ItemGroup.TOOLS).addToolType(ToolType.SHOVEL, 4)).setRegistryName(location("mod_gem_shovel")),
-			ItemList.mod_gem_hoe = new HoeItem(ItemList.ModGemItemTier.MOD_GEM, 3.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(location("mod_gem_hoe"))
+			ItemList.mod_gem_sword = new SwordItem(ItemList.ThorneCraftItemTier.MOD_GEM, 3, 1.8f, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(location("mod_gem_sword")),
+			ItemList.mod_gem_pickaxe = new PickaxeItem(ItemList.ThorneCraftItemTier.MOD_GEM, 1, -2.8f, new Item.Properties().group(ItemGroup.TOOLS).addToolType(ToolType.PICKAXE, 4)).setRegistryName(location("mod_gem_pickaxe")),
+			ItemList.mod_gem_axe = new AxeItem(ItemList.ThorneCraftItemTier.MOD_GEM, 2, 1.2f, new Item.Properties().group(ItemGroup.TOOLS).addToolType(ToolType.AXE, 4)).setRegistryName(location("mod_gem_axe")),
+			ItemList.mod_gem_shovel = new ShovelItem(ItemList.ThorneCraftItemTier.MOD_GEM, 0, 1.0f, new Item.Properties().group(ItemGroup.TOOLS).addToolType(ToolType.SHOVEL, 4)).setRegistryName(location("mod_gem_shovel")),
+			ItemList.mod_gem_hoe = new HoeItem(ItemList.ThorneCraftItemTier.MOD_GEM, 3.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(location("mod_gem_hoe")),
+			
+			ItemList.mod_gem_helmet = new ArmorItem(ThorneCraftArmorMaterial.MOD_GEM, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(location("mod_gem_helmet")),
+			ItemList.mod_gem_chestplate = new ArmorItem(ThorneCraftArmorMaterial.MOD_GEM, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(location("mod_gem_chestplate")),
+			ItemList.mod_gem_leggings = new ArmorItem(ThorneCraftArmorMaterial.MOD_GEM, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(location("mod_gem_leggings")),	
+			ItemList.mod_gem_boots = new ArmorItem(ThorneCraftArmorMaterial.MOD_GEM, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(location("mod_gem_boots"))
 		);
 	}
 	
@@ -63,6 +72,7 @@ public class RegistryEvents
 		event.getRegistry().registerAll
 		(
 			BlockList.mod_gem_block = new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(5).sound(SoundType.METAL).harvestTool(ToolType.PICKAXE).harvestLevel(3)).setRegistryName(location("mod_gem_block")),
+			BlockList.mod_gem_ore = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(4).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(3)).setRegistryName(location("mod_gem_ore")),
 			BlockList.sap = new FlowingFluidBlock(() -> FluidList.sap, Block.Properties.create(Material.WATER).doesNotBlockMovement().noDrops()).setRegistryName(location("sap"))
 		);
 	}

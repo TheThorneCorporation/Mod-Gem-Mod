@@ -1,21 +1,19 @@
 {
-    "type": "minecraft:block"
-    "pools": 
-        [
-            {
-                "rolls": 1,
-                "entries":
-                [
-                    {
-                        "type": "minecraft:item", "name": "thorneislearningmods:mod_gem_block"
-                    }
-                ],
-                "conditions":
-                [
-                    {
-                        "condition": "minecraft:survives_explosion"
-                    }
-                ]
-            }
-        ]
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "thorneislearningmods:mod_gem_block"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ]
+    }
+  ]
 }
