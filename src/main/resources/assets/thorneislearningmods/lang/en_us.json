@@ -16,5 +16,10 @@
     "itemGroup.thornecraft_group": "ThorneCraft",
     
     "block.thorneislearningmods.sap": "Sap",
-    "item.thorneislearningmods.sap_bucket": "Bucket of Sap"
+    "item.thorneislearningmods.sap_bucket": "Bucket of Sap",
+    
+    "biome.thorneislearningmods.chuck_forest": "Chuck Forest",
+    
+    "block.thorneislearningmods.advanced_crafting_table": "Advanced Crafting Table",
+    "container.thorneislearningmods.advanced_crafting_inventory": "Advanced Crafting"
 }

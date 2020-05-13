@@ -3,34 +3,54 @@ package com.thornecorporation.tutorialmod.lists;
 import java.util.function.Supplier;
 
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.BucketItem;
+import net.minecraft.item.HoeItem;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.ShovelItem;
+import net.minecraft.item.SwordItem;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.ToolType;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+
 import com.thornecorporation.tutorialmod.Main;
+import com.thornecorporation.tutorialmod.lists.ItemList.ThorneCraftArmorMaterial;
 
 public class ItemList
 {
-    public static Item mod_gem, mod_gem_block, mod_gem_ore;
-    
-    //partially implemented Sap
-    public static Item sap_bucket;
-    
-    //basic mod gem tools.
-    public static Item mod_gem_sword, mod_gem_axe, mod_gem_pickaxe, mod_gem_shovel, mod_gem_hoe;
-    
-    //mod gem armor.
-    public static Item mod_gem_helmet, mod_gem_chestplate, mod_gem_leggings, mod_gem_boots;
+	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<Item>(ForgeRegistries.ITEMS, Main.MOD_ID);
+	
+	public static final RegistryObject<Item> MOD_GEM = ITEMS.register("mod_gem", () -> new Item(new Item.Properties().group(Main.THORNECRAFT_TAB)));
+	public static final RegistryObject<Item> MOD_GEM_SWORD = ITEMS.register("mod_gem_sword", () -> new SwordItem(ItemList.ThorneCraftItemTier.MOD_GEM, 3, 1.8f, new Item.Properties().group(Main.THORNECRAFT_TAB)));
+	public static final RegistryObject<Item> MOD_GEM_AXE = ITEMS.register("mod_gem_axe", () -> new AxeItem(ItemList.ThorneCraftItemTier.MOD_GEM, 2, 1.2f, new Item.Properties().group(Main.THORNECRAFT_TAB).addToolType(ToolType.AXE, 4)));
+	public static final RegistryObject<Item> MOD_GEM_PICKAXE = ITEMS.register("mod_gem_pickaxe", () -> new PickaxeItem(ItemList.ThorneCraftItemTier.MOD_GEM, 1, -2.8f, new Item.Properties().group(Main.THORNECRAFT_TAB).addToolType(ToolType.PICKAXE, 4)));
+	public static final RegistryObject<Item> MOD_GEM_SHOVEL = ITEMS.register("mod_gem_shovel", () -> new ShovelItem(ItemList.ThorneCraftItemTier.MOD_GEM, 0, 1.0f, new Item.Properties().group(Main.THORNECRAFT_TAB).addToolType(ToolType.SHOVEL, 4)));
+	public static final RegistryObject<Item> MOD_GEM_HOE = ITEMS.register("mod_gem_hoe", () -> new HoeItem(ItemList.ThorneCraftItemTier.MOD_GEM, 3.0f, new Item.Properties().group(Main.THORNECRAFT_TAB)));
+	
+	public static final RegistryObject<Item> MOD_GEM_HELMET = ITEMS.register("mod_gem_helmet", () -> new ArmorItem(ThorneCraftArmorMaterial.MOD_GEM, EquipmentSlotType.HEAD, new Item.Properties().group(Main.THORNECRAFT_TAB)));
+	public static final RegistryObject<Item> MOD_GEM_CHESTPLATE = ITEMS.register("mod_gem_chestplate", () -> new ArmorItem(ThorneCraftArmorMaterial.MOD_GEM, EquipmentSlotType.CHEST, new Item.Properties().group(Main.THORNECRAFT_TAB)));
+	public static final RegistryObject<Item> MOD_GEM_LEGGINGS = ITEMS.register("mod_gem_leggings", () -> new ArmorItem(ThorneCraftArmorMaterial.MOD_GEM, EquipmentSlotType.LEGS, new Item.Properties().group(Main.THORNECRAFT_TAB)));
+	public static final RegistryObject<Item> MOD_GEM_BOOTS = ITEMS.register("mod_gem_boots", () -> new ArmorItem(ThorneCraftArmorMaterial.MOD_GEM, EquipmentSlotType.FEET, new Item.Properties().group(Main.THORNECRAFT_TAB)));
+	
+	public static final RegistryObject<Item> SAP_BUCKET = ITEMS.register("sap_bucket", () -> new BucketItem(() ->  FluidList.sap, new Item.Properties().group(ItemGroup.MISC).maxStackSize(1)));
+	
     
     //Mod Tool item iter
     public enum ThorneCraftItemTier implements IItemTier {
     	MOD_GEM(4, 2680, 12.0f, 7.0f, 25, () -> {
-    	    return Ingredient.fromItems(ItemList.mod_gem);
+    	    return Ingredient.fromItems(ItemList.MOD_GEM.get());
     	});
     	
     	private final int harvestLevel;
@@ -89,7 +109,7 @@ public class ItemList
     
     public enum ThorneCraftArmorMaterial implements IArmorMaterial {
     	MOD_GEM(Main.MOD_ID + ":mod_gem", 45, new int[] {3, 6, 10, 4}, 30, SoundEvents.field_226124_Y_,
-    			4.0F, () -> Ingredient.fromItems(ItemList.mod_gem));
+    			4.0F, () -> Ingredient.fromItems(ItemList.MOD_GEM.get()));
     	
     	private static int[] MAX_DAMAGE_ARRAY = new int[] {13, 15, 16, 11};
     	private final String name;

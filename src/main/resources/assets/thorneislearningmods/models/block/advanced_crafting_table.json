@@ -1,0 +1,8 @@
+{
+	"parent": "block/cube_bottom_top",
+	"textures": {
+		"side": "thorneislearningmods:blocks/advanced_crafting_table_side",
+		"top": "thorneislearningmods:blocks/advanced_crafting_table_top",
+		"bottom": "thorneislearningmods:blocks/advanced_crafting_table_bottom"
+	}
+}

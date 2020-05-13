@@ -1,0 +1,16 @@
+{
+    "type": "thorneislearningmods:advanced_crafting",
+    "pattern": [
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "thorneislearningmods:mod_gem"
+        }
+    },
+    "result": {
+        "item": "thorneislearningmods:mod_gem_block",
+        "count": 1
+    }
+}

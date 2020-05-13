@@ -61,7 +61,7 @@ public abstract class FluidSap extends FlowingFluid{
 	@Override
 	public Item getFilledBucket() {
 		// TODO Auto-generated method stub
-		return ItemList.sap_bucket;
+		return ItemList.SAP_BUCKET.get();
 	}
 
 	@Override
@@ -86,7 +86,7 @@ public abstract class FluidSap extends FlowingFluid{
 	@Override
 	protected BlockState getBlockState(IFluidState state) {
 		// TODO Auto-generated method stub
-		return BlockList.sap.getDefaultState().with(FlowingFluidBlock.LEVEL, Integer.valueOf(getLevelFromState(state)));
+		return BlockList.SAP.get().getDefaultState().with(FlowingFluidBlock.LEVEL, Integer.valueOf(getLevelFromState(state)));
 	}
 	
 	@Override

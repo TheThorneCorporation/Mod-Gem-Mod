@@ -1,0 +1,18 @@
+{
+    "type": "thorneislearningmods:advanced_crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "thorneislearningmods:mod_gem"
+        },
+        {
+            "item": "thorneislearningmods:mod_gem"
+        },
+        {
+            "item": "thorneislearningmods:mod_gem"
+        }
+    ],
+    "result": {
+        "item": "thorneislearningmods:mod_gem_block",
+        "count": 1
+    }
+}
